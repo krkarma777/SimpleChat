@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 
@@ -25,17 +22,33 @@ public class ChatClient {
 
         try{
             String line = null;
-            while ((line = br.readLine()) != null){
+            while ((line = keybord.readLine()) != null){
                 if("/quit".equals(line))
                         break;
                     pw.println(line);
                     pw.flush();
                 System.out.println(line);
             }
+        } catch (IOException ioe){
+            System.out.println("입출력 예외가 발생했습니다: " + ioe.getMessage());
+        }
+        try{
+            br.close();
         } catch (Exception ex){
-            System.out.println("?");
+
         }
 
+        try{
+            pw.close();
+        } catch (Exception ex){
+
+        }
+
+        try{
+            socket.close();
+        } catch (Exception ex){
+
+        }
     }
 }
 

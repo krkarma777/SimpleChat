@@ -36,8 +36,9 @@ public class ChatThread extends Thread {
     @Override
     public void run() {
         try {
-            String line = null;
             broadcast(name + "님이 연결되었습니다.",false);
+
+            String line = null;
 
             while ((line = br.readLine()) !=null){
                 broadcast(name + " : " + line, true);
