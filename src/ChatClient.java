@@ -11,6 +11,7 @@ public class ChatClient extends Thread {
     private BufferedReader br;
     private PrintWriter pw;
     private Socket socket;
+    List<ChatClient> list;
     public ChatClient(Socket socket, List<ChatClient> list) throws Exception{
         this.socket = socket;
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -19,6 +20,8 @@ public class ChatClient extends Thread {
         this.br = br;
         this.pw = pw;
         this.name = br.readLine();
+        this.list = list;
+        this.list.add(this);
 
     }
 }
