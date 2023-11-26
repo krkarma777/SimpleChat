@@ -42,7 +42,7 @@ public class ChatThread extends Thread {
 
             while ((line = br.readLine()) !=null){
                 if ("/quit".equals(line)){
-                    throw new RuntimeException("접속 종료");
+                    break;
                 }
                 broadcast(name + " : " + line, true);
 
