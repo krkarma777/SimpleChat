@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76da4c9e-ad30-40a2-bb41-523f127d9fda" name="Changes" comment="ChatThread 에러 해결 : 리스트 복제 메서드 변경">
+    <list default="true" id="76da4c9e-ad30-40a2-bb41-523f127d9fda" name="Changes" comment="ChatClient 추가 : 리더 라이터 소켓 리소스 클로즈.&#10;&#10;ChatServer가 /quit를 받지못함 해결해야됨.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,7 @@
     <configuration name="Chat2 Client" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="ChatClient" />
       <module name="SimpleChat" />
-      <option name="PROGRAM_PARAMETERS" value="lee" />
+      <option name="PROGRAM_PARAMETERS" value="kim" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,7 +89,7 @@
       <updated>1700918329937</updated>
       <workItem from="1700918330939" duration="5389000" />
       <workItem from="1700925135743" duration="1497000" />
-      <workItem from="1701007376623" duration="7382000" />
+      <workItem from="1701007376623" duration="8497000" />
     </task>
     <task id="LOCAL-00001" summary="ChatServer 수정: 주석 업데이트 및 쓰레드 생성 로직 수정&#10;&#10;ChatClient 다중접속 기능 업데이트: 닉네임 설정 등의 기능을 구체화 중">
       <option name="closed" value="true" />
@@ -130,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701014113615</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ChatClient 추가 : 리더 라이터 소켓 리소스 클로즈.&#10;&#10;ChatServer가 /quit를 받지못함 해결해야됨.">
+      <option name="closed" value="true" />
+      <created>1701015230353</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701015230353</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +151,8 @@
     <MESSAGE value="ChatClient 이름 수정 : ChatThread 역할의 클래스에 이름을 잘못 적용함" />
     <MESSAGE value="브로드캐스팅 및 사용자 입장/퇴장 메시지 기능 추가&#10;&#10;- ChatThread를 수정하여 메시지를 전체 클라이언트에 브로드캐스팅합니다. 이제 사용자가 메시지를 보내면 모든 연결된 클라이언트에게 전달됩니다.&#10;- ChatServer에 사용자 입장 및 퇴장 메시지 기능을 추가했습니다. 새로운 사용자가 연결되면 환영 메시지가 브로드캐스트되며, 사용자가 연결을 해제하면 작별 메시지가 브로드캐스트됩니다.&#10;- ChatClient를 업데이트하여 사용자 입장/퇴장 메시지를 처리하고 사용자에게 표시합니다&#10;-Thread 0 error 발생" />
     <MESSAGE value="ChatThread 에러 해결 : 리스트 복제 메서드 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChatThread 에러 해결 : 리스트 복제 메서드 변경" />
+    <MESSAGE value="ChatClient 추가 : 리더 라이터 소켓 리소스 클로즈.&#10;&#10;ChatServer가 /quit를 받지못함 해결해야됨." />
+    <option name="LAST_COMMIT_MESSAGE" value="ChatClient 추가 : 리더 라이터 소켓 리소스 클로즈.&#10;&#10;ChatServer가 /quit를 받지못함 해결해야됨." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

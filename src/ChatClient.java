@@ -23,10 +23,11 @@ public class ChatClient {
         try{
             String line = null;
             while ((line = keybord.readLine()) != null){
-                if("/quit".equals(line))
-                        break;
-                    pw.println(line);
+                if("/quit".equals(line)){
+                    pw.println("/quit");
                     pw.flush();
+                        break;
+                }
                 System.out.println(line);
             }
         } catch (IOException ioe){
