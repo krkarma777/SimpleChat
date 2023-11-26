@@ -1,50 +1,24 @@
-import com.sun.source.tree.Scope;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.List;
 
-public class ChatClient {
-    // java ChatClient 닉네임 하면 name 필드에 적용
-    public static void main(String[] args) throws Exception {
-        String name = args[0];
+public class ChatClient extends Thread {
 
-        Socket socket = new Socket("127.0.0.1", 9999);
+    private String name;
+    private BufferedReader br;
+    private PrintWriter pw;
+    private Socket socket;
+    public ChatClient(Socket socket, List<ChatClient> list) throws Exception{
+        this.socket = socket;
+        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
-        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        this.br = br;
+        this.pw = pw;
+        this.name = br.readLine();
 
-        BufferedReader keybord = new BufferedReader(new InputStreamReader(System.in));
-
-        String line = null;
-        InputThread inputThread = new InputThread(in);
-        inputThread.start();
-
-        while((line = keybord.readLine()) != null){
-            out.println(name + " : " + line);
-            out.flush();
-        }
-    }
-}
-
-class InputThread extends Thread{
-    BufferedReader in = null;
-
-    public InputThread(BufferedReader in) {
-        this.in = in;
-    }
-
-    @Override
-    public void run() {
-        try {
-            String line = null;
-            while((line = in.readLine()) != null){
-                System.out.println(line);
-            }
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
     }
 }
