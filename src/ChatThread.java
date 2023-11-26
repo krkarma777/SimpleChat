@@ -5,14 +5,14 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.List;
 
-public class ChatClient extends Thread {
+public class ChatThread extends Thread {
 
     private String name;
     private BufferedReader br;
     private PrintWriter pw;
     private Socket socket;
-    List<ChatClient> list;
-    public ChatClient(Socket socket, List<ChatClient> list) throws Exception{
+    List<ChatThread> list;
+    public ChatThread(Socket socket, List<ChatThread> list) throws Exception{
         this.socket = socket;
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
