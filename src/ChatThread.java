@@ -50,9 +50,9 @@ public class ChatThread extends Thread {
 
         } catch (Exception ex){
             ex.printStackTrace();
+        } finally {
             broadcast(name + "님의 연결이 종료되었습니다.",false);
             this.list.remove(this);
-        } finally {
             try {
                 br.close();
             }catch (Exception ex){}
