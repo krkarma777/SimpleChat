@@ -28,7 +28,8 @@ public class ChatClient {
                     pw.flush();
                         break;
                 }
-                System.out.println(line);
+                pw.println(line);
+                pw.flush();
             }
         } catch (IOException ioe){
             System.out.println("입출력 예외가 발생했습니다: " + ioe.getMessage());

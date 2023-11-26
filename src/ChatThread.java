@@ -44,8 +44,8 @@ public class ChatThread extends Thread {
                 if ("/quit".equals(line)){
                     throw new RuntimeException("접속 종료");
                 }
-
                 broadcast(name + " : " + line, true);
+
             }
 
         } catch (Exception ex){
